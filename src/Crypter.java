@@ -1,17 +1,18 @@
 /**
  * @author Raido Roomets <raido.roomets@cs.tamk.fi>
  * @author Roope Rantanen <roope.rantanen@cs.tamk.fi>
+ * @author Anton Peltoniemi <anton.peltoniemi@cs.tamk.fi>
  * @version 2014-1022
  * @since 1.7
  */
 public class Crypter {
  
 	/**
-	 * Array of alphabets and numbers.
+	 * Array of upper case alphabets and numbers.
 	 */
-    private static char[] alphabets = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
-                "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
-                "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8",
+    private static char[] characters = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+                "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
+                "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8",
                 "9", "0", " " };
 
 	/**
@@ -30,21 +31,21 @@ public class Crypter {
 
         for (int i = 0; i < args.length; i++) {
  
-            System.out.print(toMorse(aakkoset, morse, args[i]));
+            System.out.print(toMorse(characters, morse, args[i]));
  
         }
     }
  
-    public static String toMorse(String[] aakkoset, String[] morse,
+    public static String toMorse(String[] characters, String[] morse,
             String morseString) {
-        String alphabeth = "";
+        String alphabet = "";
  
         for (int i = 0; i < morse.length; i++) {
             if (morseString.equals(morse[i])) {
-                alphabeth = aakkoset[i];
+                alphabet = characters[i];
             }
         }
  
-        return alphabeth;
+        return alphabet;
     }
 }
