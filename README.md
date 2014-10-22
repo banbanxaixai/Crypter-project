@@ -9,9 +9,22 @@ which will be then converted to gibberish by clicking
 the "Crypt it!"-button. The crypted text will be then 
 shown in the next textfield.
 
+
 Developers
 ==========
 
 Roope Rantanen <roope.rantanen@cs.tamk.fi>
 Raido Roomets <raido.roomets@cs.tamk.fi>
 Anton Peltoniemi <anton.peltoniemi@cs.tamk.fi>
+=======
+
+Contact
+=======
+
+Contact on individual emails.
+
+
+Copyright
+=========
+
+See COPYING.
