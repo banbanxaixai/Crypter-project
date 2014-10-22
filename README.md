@@ -12,5 +12,5 @@ shown in the next textfield.
 Developers
 ==========
 
-Roope Rantanen
+Roope Rantanen <roope.rantanen@cs.tamk.fi>
 Raido Roomets <raido.roomets@cs.tamk.fi>
