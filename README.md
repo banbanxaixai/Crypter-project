@@ -8,3 +8,9 @@ In the GUI user types the desired text to a textfield,
 which will be then converted to gibberish by clicking 
 the "Crypt it!"-button. The crypted text will be then 
 shown in the next textfield.
+
+Developers
+==========
+
+Roope Rantanen
+Raido Roomets <raido.roomets@cs.tamk.fi>
