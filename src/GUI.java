@@ -120,15 +120,19 @@ public class GUI extends JFrame {
                 if(indicator > 0) {
                 upperArea.remove(cryptButton);
                 upperArea.remove(switchButton);
+                upperArea.remove(toTextButton);
                 upperArea.add(decryptButton);
                 upperArea.add(switchButton);
+                upperArea.add(toTextButton);
                 upperArea.updateUI();
                 indicator = indicator * -1;
                 } else if(indicator < 0) {
                     upperArea.remove(decryptButton);
                     upperArea.remove(switchButton);
+                    upperArea.remove(toTextButton);
                     upperArea.add(cryptButton);
                     upperArea.add(switchButton);
+                    upperArea.add(toTextButton);
                     upperArea.updateUI();
                     indicator = indicator * -1;
                 }
