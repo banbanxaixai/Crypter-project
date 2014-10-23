@@ -47,11 +47,12 @@ public class Crypter {
 	 */
     public static String toMorse(String originalText) {
         String cryptedText = "";
+		String upperCasedText = originalText.toUpperCase();
 
-        for (int j = 0;j<originalText.length();j++) {
+        for (int j = 0;j<upperCasedText.length();j++) {
 
             for (int i = 0; i < characters.length; i++) {
-                if (originalText.charAt(j) == characters[i]) {
+                if (upperCasedText.charAt(j) == characters[i]) {
                     cryptedText = cryptedText + " " + morse[i];
                 }
             }
