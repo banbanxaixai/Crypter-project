@@ -101,7 +101,6 @@ public class GUI extends JFrame {
         resetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Execute when button is pressed}
-                System.out.println("You clicked the button");
                 originalText.setText("");
                 cryptedText.setText("");
            }
@@ -110,7 +109,6 @@ public class GUI extends JFrame {
         cryptButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Execute when button is pressed}}
-                System.out.println("You clicked the button");
 
                 cryptedText.setText(crypter.toMorse(originalText.getText()));
             }
@@ -119,7 +117,6 @@ public class GUI extends JFrame {
         switchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Execute when button is pressed}}
-                System.out.println("You clicked the button");
                 if(indicator > 0) {
                 upperArea.remove(cryptButton);
                 upperArea.remove(switchButton);
@@ -143,7 +140,6 @@ public class GUI extends JFrame {
         decryptButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Execute when button is pressed}}
-                System.out.println("You clicked the button");
 
                 cryptedText.setText(crypter.toAlphabets(originalText.getText()));
             }
