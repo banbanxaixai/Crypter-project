@@ -53,11 +53,35 @@ public class Crypter {
 
             for (int i = 0; i < characters.length; i++) {
                 if (upperCasedText.charAt(j) == characters[i]) {
-                    cryptedText = cryptedText + " " + crypted[i];
+                    cryptedText = cryptedText + "" + crypted[i];
                 }
             }
         }
 
         return cryptedText;
+    }
+
+    /**
+     * Returns parameter text as original version of the text.}
+     *
+     * When a text string is received as a parameter every character
+     * from that string is compared to the code array and once found
+     * the matching alphabeth the character is added to a string variable. This
+     * will form an exact copy of the crypted text but in original readable form.
+     *
+     * @param cryptedText coded text the user has entered
+     * @return originalText parameter string in decrypted form
+     */
+    public static String toAlphabets(String cryptedText) {
+        String originalText = "";
+        
+        for (int j = 0;j<cryptedText.length();j++) {
+            for (int i = 0; i < crypted.length; i++) {
+                if (cryptedText.charAt(j) == crypted[i]) {
+                    originalText = originalText + " " + characters[i];
+                }
+            }
+        }
+        return originalText;
     }
 }
