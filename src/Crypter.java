@@ -21,11 +21,11 @@ public class Crypter {
 	 * Each figure represents a character and is on the same index as
 	 * its counterpart in alphabets array.
 	 */
-	private static String[] morse = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
-                "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.",
-                "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-",
-                "-.--", "--..", ".----", "..---", "...--", "....-", ".....",
-                "-....", "--...", "---..", "----.", "-----", " " };
+	private static String[] crypted = { "!", "½", "§", "#", "¤", "&", "/",
+                "@", "£", "%", "(", ")", "=", "{", "}", "[",
+                "]", "+", "^", "~", "<", ">", "|", ";",
+                "*", "P", "G", "q", "€", "V", "Q",
+                "h", "O", "K", "A", "a", " " };
 
 	/**
 	 * Initializes a crypter object when one is created.
