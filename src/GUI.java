@@ -11,6 +11,7 @@ import javax.swing.BorderFactory;
 import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.io.FileOutputStream;
 
 public class GUI extends JFrame {
 
@@ -18,7 +19,7 @@ public class GUI extends JFrame {
     private JButton resetButton;
     private JButton cryptButton;
     private JButton decryptButton;
-    private Jbutton toTextButton;
+    private JButton toTextButton;
     private JTextArea originalText;
     private JTextArea cryptedText;
     private JPanel upperArea;
@@ -65,7 +66,7 @@ public class GUI extends JFrame {
 
         cryptButton = new JButton("TEXT TO CODE");
         decryptButton = new JButton("CODE TO TEXT");
-        toTextButton = new JButton("Export to textfile");
+        toTextButton = new JButton("Export to Text File");
         crypter = new Crypter();
 
         cryptedText = new JTextArea(15, 30);
