@@ -16,7 +16,7 @@ Developers
 Roope Rantanen <roope.rantanen@cs.tamk.fi>
 Raido Roomets <raido.roomets@cs.tamk.fi>
 Anton Peltoniemi <anton.peltoniemi@cs.tamk.fi>
-
+Iikka Pohjola <iikka.pohjola@cs.tamk.fi>
 
 Contact
 =======
