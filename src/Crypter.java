@@ -21,11 +21,11 @@ public class Crypter {
 	 * Each figure represents a character and is on the same index as
 	 * its counterpart in alphabets array.
 	 */
-	private static String[] crypted = { "!", "½", "§", "#", "¤", "&", "/",
-                "@", "£", "%", "(", ")", "=", "{", "}", "[",
-                "]", "+", "^", "~", "<", ">", "|", ";",
-                "*", "P", "G", "q", "€", "V", "Q",
-                "h", "O", "K", "A", "a", " " };
+	private static char[] crypted = { '!', '½', '§', '#', '¤', '&', '/',
+                '@', '£', '%', '(', ')', '=', '{', '}', '[',
+                ']', '+', '^', '~', '<', '>', '|', ';',
+                '*', 'P', 'G', 'q', '€', 'V', 'Q',
+                'h', 'O', 'K', 'A', 'a', ' ' };
 
 	/**
 	 * Initializes a crypter object when one is created.
@@ -53,7 +53,7 @@ public class Crypter {
 
             for (int i = 0; i < characters.length; i++) {
                 if (upperCasedText.charAt(j) == characters[i]) {
-                    cryptedText = cryptedText + " " + morse[i];
+                    cryptedText = cryptedText + " " + crypted[i];
                 }
             }
         }
