@@ -15,7 +15,7 @@ public class GUI extends JFrame {
     private JTextArea originalText;
     private JTextArea cryptedText;
     private JPanel middleArea;
-
+    private Crypter crypter;
     public GUI() {
 
         super();
@@ -43,6 +43,7 @@ public class GUI extends JFrame {
         originalText = new JTextArea(15, 30);
 
         cryptButton = new JButton("Crypt it!");
+        crypter = new Crypter();
 
         cryptedText = new JTextArea(15, 30);
 
@@ -61,6 +62,15 @@ public class GUI extends JFrame {
                 originalText.setText("");
                 cryptedText.setText("");
            }
+        });
+
+        cryptButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Execute when button is pressed}}
+                System.out.println("You clicked the button");
+
+                cryptedText.setText(crypter.toMorse(originalText.getText()));
+            }
         });
     }
 }
