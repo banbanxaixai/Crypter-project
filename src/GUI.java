@@ -1,3 +1,11 @@
+/**
+ * @author Raido Roomets <raido.roomets@cs.tamk.fi>
+ * @author Roope Rantanen <roope.rantanen@cs.tamk.fi>
+ * @author Anton Peltoniemi <anton.peltoniemi@cs.tamk.fi>
+ * @author Iikka Pohjola <iikka.pohjola@cs.tamk.fi>
+ * @since 1.7
+ */
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
@@ -26,10 +34,18 @@ public class GUI extends JFrame {
     private Crypter crypter;
     private int indicator = 1;
 
+    /**
+     * Initializes a default JFrame object
+     */
+
     public GUI() {
 
         super();
     }
+ 
+    /**
+     * Initializes the GUI object for the program
+     */
     public GUI(String title) {
 
         super(title);
