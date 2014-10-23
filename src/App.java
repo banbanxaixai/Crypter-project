@@ -16,7 +16,7 @@ public class App {
 	 */
     public static void main(String[] args) {
 
-        GUI window = new GUI("CRYPTER");
+        GUI window = new GUI("CRYPTERIZER");
 		
         window.setVisible(true);
     }
