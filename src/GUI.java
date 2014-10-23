@@ -22,9 +22,9 @@ public class GUI extends JFrame {
     private JPanel middleArea;
     private Crypter crypter;
     private int indicator = 1;
-    public GUI() {
+    public GUI(String title) {
 
-        super();
+        super(title);
 
         this.setSize(900, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
