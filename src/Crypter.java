@@ -78,7 +78,7 @@ public class Crypter {
         for (int j = 0;j<cryptedText.length();j++) {
             for (int i = 0; i < crypted.length; i++) {
                 if (cryptedText.charAt(j) == crypted[i]) {
-                    originalText = originalText + " " + characters[i];
+                    originalText = originalText + characters[i];
                 }
             }
         }
