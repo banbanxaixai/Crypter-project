@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -53,5 +54,13 @@ public class GUI extends JFrame {
         add(resetButton, bLayout.PAGE_END);
         add(middleArea, bLayout.CENTER);
 
+        resetButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Execute when button is pressed}
+                System.out.println("You clicked the button");
+                originalText.setText("");
+                cryptedText.setText("");
+           }
+        });
     }
 }
