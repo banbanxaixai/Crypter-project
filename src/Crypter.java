@@ -27,17 +27,14 @@ public class Crypter {
                 "-.--", "--..", ".----", "..---", "...--", "....-", ".....",
                 "-....", "--...", "---..", "----.", "-----", " " };
 
-	public static void main(String[] args) {
+	/**
+	 * Initializes a crypter object when one is created.
+	 */
+	public Crypter() {
 
-        for (int i = 0; i < args.length; i++) {
+	}
  
-            System.out.print(toMorse(characters, morse, args[i]));
- 
-        }
-    }
- 
-    public static String toMorse(String[] characters, String[] morse,
-            String morseString) {
+    public static String toMorse() {
         String alphabet = "";
  
         for (int i = 0; i < morse.length; i++) {
