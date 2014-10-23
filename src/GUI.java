@@ -6,54 +6,73 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.border.Border;
+import javax.swing.BorderFactory;
+import java.awt.Color;
 
 public class GUI extends JFrame {
 
-    private JButton startButton;
+    private JButton switchButton;
     private JButton resetButton;
     private JButton cryptButton;
+    private JButton decryptButton;
     private JTextArea originalText;
     private JTextArea cryptedText;
+    private JPanel upperArea;
     private JPanel middleArea;
     private Crypter crypter;
+    private int indicator = 1;
     public GUI() {
 
         super();
 
-        this.setSize(900, 300);
+        this.setSize(900, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         BorderLayout bLayout = new BorderLayout();
-        FlowLayout fLayout = new FlowLayout();
+        FlowLayout fLayout = new FlowLayout(FlowLayout.CENTER, 20, 10);
 
         setLayout(bLayout);
 
-        startButton = new JButton("START");
+        upperArea = new JPanel();
 
-        System.out.println(getHeight());
+        upperArea.setLayout(fLayout);
+        upperArea.setBackground(new Color(80,80,100) );
+
 
         /** painike jota painamalla tekstikentät tyhjenevät */
         resetButton = new JButton("RESET");
 
+        switchButton = new JButton("Switch");
         /** keskelle sijoitettava JPanel jonka sisälle wräpätään tekstialueet ja painike */
         middleArea = new JPanel();
-
+        middleArea.setBackground(new Color(80,80,100));
         middleArea.setLayout(fLayout);
 
         originalText = new JTextArea(15, 30);
+        Border bordergreen = BorderFactory.createLineBorder(Color.green);
+        Border bordermagenta = BorderFactory.createLineBorder(Color.magenta);
+        originalText.setBorder(bordergreen);
 
-        cryptButton = new JButton("Crypt it!");
+        cryptButton = new JButton("TEXT TO CODE");
+        decryptButton = new JButton("CODE TO TEXT");
         crypter = new Crypter();
 
         cryptedText = new JTextArea(15, 30);
+        cryptedText.setBorder(bordermagenta);
+
+        upperArea.add(cryptButton);
+        upperArea.add(switchButton);
 
         /** Lisätään JPaneliin järjestyksessä 'elementit' */
         middleArea.add(originalText);
-        middleArea.add(cryptButton);
+
         middleArea.add(cryptedText);
 
+        add(upperArea, bLayout.PAGE_START);
         add(resetButton, bLayout.PAGE_END);
         add(middleArea, bLayout.CENTER);
+
 
         resetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -70,6 +89,39 @@ public class GUI extends JFrame {
                 System.out.println("You clicked the button");
 
                 cryptedText.setText(crypter.toMorse(originalText.getText()));
+            }
+        });
+
+        switchButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Execute when button is pressed}}
+                System.out.println("You clicked the button");
+                if(indicator > 0) {
+                upperArea.remove(cryptButton);
+                upperArea.remove(switchButton);
+                upperArea.add(decryptButton);
+                upperArea.add(switchButton);
+                upperArea.updateUI();
+                indicator = indicator * -1;
+                } else if(indicator < 0) {
+                    upperArea.remove(decryptButton);
+                    upperArea.remove(switchButton);
+                    upperArea.add(cryptButton);
+                    upperArea.add(switchButton);
+                    upperArea.updateUI();
+                    indicator = indicator * -1;
+                }
+                originalText.setText(cryptedText.getText());
+                cryptedText.setText("");
+            }
+        });
+
+        decryptButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Execute when button is pressed}}
+                System.out.println("You clicked the button");
+
+                cryptedText.setText(crypter.toAlphabets(originalText.getText()));
             }
         });
     }
