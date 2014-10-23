@@ -9,6 +9,8 @@ import javax.swing.JTextArea;
 import javax.swing.border.Border;
 import javax.swing.BorderFactory;
 import java.awt.Color;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 
 public class GUI extends JFrame {
 
@@ -16,6 +18,7 @@ public class GUI extends JFrame {
     private JButton resetButton;
     private JButton cryptButton;
     private JButton decryptButton;
+    private Jbutton toTextButton;
     private JTextArea originalText;
     private JTextArea cryptedText;
     private JPanel upperArea;
@@ -62,6 +65,7 @@ public class GUI extends JFrame {
 
         cryptButton = new JButton("TEXT TO CODE");
         decryptButton = new JButton("CODE TO TEXT");
+        toTextButton = new JButton("Export to textfile");
         crypter = new Crypter();
 
         cryptedText = new JTextArea(15, 30);
@@ -69,6 +73,7 @@ public class GUI extends JFrame {
 
         upperArea.add(cryptButton);
         upperArea.add(switchButton);
+        upperArea.add(toTextButton);
 
         /** Lisätään JPaneliin järjestyksessä 'elementit' */
         middleArea.add(originalText);
@@ -79,6 +84,18 @@ public class GUI extends JFrame {
         add(resetButton, bLayout.PAGE_END);
         add(middleArea, bLayout.CENTER);
 
+        toTextButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Execute when button is pressed}}
+                String toTextFile = cryptedText.getText();
+                System.out.println(toTextFile);
+                try (PrintStream out = new PrintStream(new FileOutputStream("code.txt"))) {
+                    out.print(toTextFile);
+                } catch (FileNotFoundException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
 
         resetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
