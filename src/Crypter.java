@@ -2,7 +2,7 @@
  * @author Raido Roomets <raido.roomets@cs.tamk.fi>
  * @author Roope Rantanen <roope.rantanen@cs.tamk.fi>
  * @author Anton Peltoniemi <anton.peltoniemi@cs.tamk.fi>
- * @version 2014-1022
+ * @version 2014-1023
  * @since 1.7
  */
 public class Crypter {
@@ -34,6 +34,17 @@ public class Crypter {
 
 	}
 
+	/**
+	 * Returns parameter text as crypted version of the text.
+	 * 
+	 * When a text string is received as a parameter every character
+	 * from that string is compared to the alphabets array and once found
+	 * the matching crypted character is added to a string variable. This
+	 * will form an exact copy of the original text but in crypted form.
+	 *
+	 * @param originalText text the user has entered
+	 * @return cryptedText parameter string in crypted form
+	 */
     public static String toMorse(String originalText) {
         String cryptedText = "";
 
